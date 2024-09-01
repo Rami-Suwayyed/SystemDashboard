@@ -28,11 +28,11 @@
                                     @csrf
 
                                     <div class="mb-3">
-                                        <label class="form-label" for="email">Email</label>
-                                        <input type="text" class="form-control @error('email') is-invalid @enderror @error('username') is-invalid @enderror"
+                                        <label class="form-label" for="email">Email or Username</label>
+                                        <input type="text" class="form-control @error('email'||'username') is-invalid @enderror"
                                             name="login" value="{{ old('login') }}" id="email"
                                             placeholder="{{__('enter_email_address')}}">
-                                        @error('email')
+                                        @error('email'||'username')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
